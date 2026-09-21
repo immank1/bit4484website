@@ -1,8 +1,8 @@
-import { meetingMinutes, project } from "@/data/project";
+import { project } from "@/data/project";
 
 export const metadata = {
   title: `Meeting Minutes | ${project.name}`,
-  description: "Official team meeting minutes, agenda notes, and action item logs.",
+  description: "Meeting minutes and progress report logs for Team 2.",
 };
 
 export default function MeetingMinutesPage() {
@@ -25,101 +25,28 @@ export default function MeetingMinutesPage() {
           <span className="flex-1 bg-accent" />
           <span className="w-8 bg-accent-orange" />
         </div>
-
-        <p className="mt-6 text-lg leading-relaxed text-foreground/90 max-w-2xl">
-          Weekly logs documenting team attendance, agenda discussion topics, operational decisions,
-          and assigned action items for the Clean Slate Project.
-        </p>
       </header>
 
-      {/* Meeting Logs */}
-      <section className="space-y-8 border-t border-rule pt-8 font-sans">
-        {meetingMinutes.map((meeting, index) => (
-          <div
-            key={meeting.id}
-            className="rounded-2xl border border-rule bg-background p-6 shadow-2xs transition hover:border-accent/30 sm:p-8"
-          >
-            {/* Top row: Meeting # and Date */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-rule pb-4">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-accent-orange">
-                  Meeting #{meetingMinutes.length - index}
-                </span>
-                <h2 className="mt-1 font-serif text-2xl font-semibold text-foreground">
-                  {meeting.title}
-                </h2>
-              </div>
-              <time className="rounded-full bg-neutral-100 px-3.5 py-1 text-xs font-medium text-muted">
-                {meeting.date}
-              </time>
-            </div>
-
-            {/* Attendees */}
-            <div className="mt-5 text-sm">
-              <span className="font-semibold text-foreground">Attendees: </span>
-              <span className="text-muted">{meeting.attendees.join(", ")}</span>
-            </div>
-
-            {/* Agenda */}
-            <div className="mt-4">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-muted">
-                Agenda Items
-              </h3>
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground/90">
-                {meeting.agenda.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Discussion & Summary */}
-            <div className="mt-5 rounded-xl bg-neutral-50/80 p-4 text-sm leading-relaxed text-foreground/90">
-              <span className="font-semibold text-accent">Summary &amp; Decisions: </span>
-              {meeting.summary}
-            </div>
-
-            {/* Action Items */}
-            <div className="mt-6">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-muted">
-                Action Items
-              </h3>
-              <div className="mt-2 overflow-x-auto rounded-lg border border-rule">
-                <table className="w-full min-w-[30rem] text-left text-xs">
-                  <thead className="bg-neutral-50 text-muted uppercase tracking-wider">
-                    <tr>
-                      <th className="py-2.5 px-4 font-semibold">Action Task</th>
-                      <th className="py-2.5 px-4 font-semibold">Assignee</th>
-                      <th className="py-2.5 px-4 font-semibold">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-rule">
-                    {meeting.actionItems.map((item, idx) => (
-                      <tr key={idx} className="hover:bg-neutral-50/50">
-                        <td className="py-2.5 px-4 font-medium text-foreground">
-                          {item.task}
-                        </td>
-                        <td className="py-2.5 px-4 text-muted">{item.assignee}</td>
-                        <td className="py-2.5 px-4">
-                          <span
-                            className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ${
-                              item.status === "Completed"
-                                ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                                : item.status === "In Progress"
-                                ? "bg-amber-50 text-amber-700 border border-amber-200"
-                                : "bg-neutral-100 text-neutral-600"
-                            }`}
-                          >
-                            {item.status}
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+      {/* Under Construction / In Progress Card */}
+      <section className="border-t border-rule pt-10 font-sans">
+        <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-rule bg-neutral-50/60 p-12 text-center">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
           </div>
-        ))}
+          <h2 className="mt-4 font-serif text-xl font-semibold text-foreground">
+            Meeting Minutes In Progress
+          </h2>
+          <p className="mt-2 max-w-md text-sm text-muted leading-relaxed">
+            Progress reports and weekly meeting logs are currently being prepared and will be uploaded to this page as deliverables are finalized.
+          </p>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-neutral-200/70 px-3 py-1 text-xs font-medium text-muted">
+              Status: Pending Progress Report Upload
+            </span>
+          </div>
+        </div>
       </section>
     </article>
   );

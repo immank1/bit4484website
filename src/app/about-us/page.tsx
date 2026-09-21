@@ -47,13 +47,13 @@ export default function AboutUsPage() {
               className="flex flex-col overflow-hidden rounded-2xl border border-rule bg-background shadow-xs transition hover:border-accent/40 hover:shadow-md"
             >
               {/* Member Photo Container */}
-              <div className="relative aspect-4/3 w-full overflow-hidden bg-neutral-100">
+              <div className="relative aspect-4/5 w-full overflow-hidden bg-neutral-100">
                 <Image
                   src={member.image}
                   alt={`Portrait of ${member.name}`}
                   fill
                   sizes="(max-width: 640px) 100vw, 50vw"
-                  className="object-cover object-center transition duration-300 hover:scale-102"
+                  className="object-cover object-top transition duration-300 hover:scale-102"
                   priority
                 />
               </div>

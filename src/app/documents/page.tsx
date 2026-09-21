@@ -17,16 +17,16 @@ const docCards = [
   {
     title: "Meeting Minutes",
     href: "/documents/meeting-minutes",
-    badge: "Weekly Logs",
+    badge: "In Progress",
     description:
-      "Documented weekly agendas, meeting attendees, milestone decisions, and action item tracking tables.",
+      "Weekly team meeting records and progress report logs (currently being prepared).",
   },
   {
     title: "Team Working Agreement",
     href: "/documents/team-contract",
-    badge: "Charter",
+    badge: "Signed PDF",
     description:
-      "Formal team charter outlining operational norms, communication channels, role expectations, and code of conduct.",
+      "Official signed team contract and working agreement document for Team 2.",
   },
 ];
 
