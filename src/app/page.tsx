@@ -100,7 +100,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/documents/stakeholders"
+            href="/documents"
             className="group block rounded-xl border border-rule bg-background p-6 transition hover:border-accent hover:shadow-sm"
           >
             <div className="flex items-center justify-between">
@@ -108,11 +108,11 @@ export default function Home() {
                 Documents &rarr;
               </h3>
               <span className="font-sans text-xs font-medium text-accent bg-accent/10 px-2.5 py-0.5 rounded-full">
-                Stakeholders &amp; Minutes
+                Repository
               </span>
             </div>
             <p className="mt-2 font-sans text-sm text-muted">
-              Access the Stakeholders Register, Meeting Minutes logs, and our official Team Charter / Contract.
+              Explore official project documents in order of importance, including Charter, Scope Statement, Schedule, Risk Analysis, and Performance Reports.
             </p>
           </Link>
         </div>
